@@ -1,0 +1,34 @@
+
+.titulo {
+   
+    color: rgb(252, 9, 9);
+  }
+  .palabra{
+
+    color: black;
+  }
+.imagen{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tabla{
+  background-color: rgb(255, 255, 255);
+
+
+}
+.boton{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+.letras{
+
+    color: rgb(247, 25, 25);
+}
+  body {
+    /* background-image:url("/ClientApp/src/assets/Imagenes/upc.jpg"); */
+    background-color: rgb(210, 241, 209);
+  }

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+            <img src="assets/Imagenes/logo.jpeg" [routerLink]='["/menu"]' width="800" height="50" side="500" alt="logo"
+                style="width:40px;">
+        </a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/menu"]'>Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/registrar"]'>Registrar Semillero</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/aval"]'>Solicitar Aval</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/estudiante"]'>Registrar Estudiantes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/docente"]'>Registrar Docente</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/convocatoria"]'>Convocatoria</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/home"]'>Salir</a>
+            </li>
+            <!-- <li class="nav-item">
+                    <a class="nav-link" [routerLink]='["/prueba"]'>prueba</a>
+                </li> -->
+        </ul>
+    </nav>
+
+    <br> <br> <br>
+
+    <div align="center">
+
+        <img src="assets/Imagenes/semi.jpeg" width="55%">
+      </div>
+    <div class="container">
+
+        <div id="stepper1" class="bs-stepper">
+            <div class="bs-stepper-header">
+                <div class="step" data-target="#test-l-1">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">1</span>
+                        <span class="bs-stepper-label">  SEMILLERO DE INVESTIGACIÓN</span>
+                    </button>
+                </div>
+           
+                <div class="step" data-target="#test-l-2">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">2</span>
+                        <span class="bs-stepper-label">ESTUDIANTES</span>
+                    </button>
+                </div>
+           
+                <div class="step" data-target="#test-l-3">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">3</span>
+                        <span class="bs-stepper-label">SEMILLERO DE INVESTIGACIÓN</span>
+                    </button>
+                </div>
+               
+                <div class="step" data-target="#test-l-4">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">4</span>
+                        <span class="bs-stepper-label">PRODUCTOS ESPERADOS</span>
+                    </button>
+                </div>
+                
+                <div class="step" data-target="#test-l-5">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">5</span>
+                        <span class="bs-stepper-label">PRODUCTOS ESPERADOS</span>
+                    </button>
+                </div>
+                <!-- <div class="step" data-target="#test-l-5">
+                        <button class="step-trigger">
+                            <span class="bs-stepper-circle">5</span>
+                            <span class="bs-stepper-label">PRODUCTOS ESPERADOS</span>
+                        </button>
+                    </div> -->
+            </div>
+            <div class="bs-stepper-content">
+                <form (ngSubmit)="onSubmit()">
+                    <div id="test-l-1" class="content">
+                        <div class="form-group" align="center">
+
+                            <table border="0" align="center">
+
+                                    <br>
+                                <tr>
+                                    <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">INFORMACIÓN DEL
+                                        SEMILLERO DE INVESTIGACIÓN</td>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Nombre del Semillero </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txtnombre" />
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Nombre Tutor</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txtapellido" />
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Apellido Tutor</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txtnombre" />
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Nombre del Grupo de Investigación</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txtnombre" />
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Programa</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txtnombre" />
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Facultad</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txtnombre" />
+                                    </td>
+
+
+                                </tr>
+                                <br>
+
+                            </table>
+
+                            <button (click)="next()" class="btn btn-success">Suguiente</button>
+                        </div>
+
+                    </div>
+                    <div id="test-l-2" class="content text-center">
+
+                        <div class="form-group" align="center">
+
+
+                            <div class="form-group">
+                                    <label style="color:#21a707" for="exampleInputEmail1">Digite Datos Del Estudiante a Buscar</label>
+                                <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+                              </div>
+                            <div class="container">
+                                    <br>
+                                <table class="table table-dark">
+                                        
+                                    <thead>
+                                        <tr>
+
+                                            <th>Nombre</th>
+                                            <th>Fechaingreso</th>
+
+
+
+                                            <th>Programa</th>
+                                            <th>Semestre</th>
+
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr *ngFor="let estudiantes of estudiantess | filtro:filterPost">
+
+
+                                            <td>{{estudiantes.nombre}}</td>
+                                            <td>{{estudiantes.ingreso}}</td>
+
+
+
+                                            <td>{{estudiantes.programa}}</td>
+                                            <td>{{estudiantes.semestre}}</td>
+
+                                            <!-- <button class="delete" title="delete socio"
+                                              (click)="delete(estudiantes)">x</button> -->
+                                            <td><input type="checkbox" class="form-control" id="ChkCompra"
+                                                    [(ngModel)]="estudiantes.estado"></td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <button (click)="next()"
+                                class="btn btn-success">Siguiente</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button (click)="atras()" class="btn btn-success">Atras</button>
+                        </div>
+
+                    </div>
+                    <div id="test-l-3" class="content">
+                        <div class="form-group" align="center">
+
+                            <table border="0" align="center">
+                                    <br>
+                                <tr>
+                                    <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">INFORMACIÓN DEL
+                                        SEMILLERO DE INVESTIGACIÓN</td>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">LÍNEA (S) DE INVESTIGACIÓN AL CUAL SE ADSCRIBE
+                                            EL SEMILLERO DE INVESTIGACIÓN <br> (Acorde a las líneas de la facultad
+                                            aprobadas):</label>
+                                    </td>
+                                    <td>
+                                        <textarea type="text" name="txtnombre"></textarea>
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Misión del Semillero: </label>
+                                    </td>
+                                    <td>
+                                        <textarea type="text" name="txtnombre"></textarea>
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Visión del Semillero:</label>
+                                    </td>
+                                    <td>
+                                        <textarea type="text" name="txtnombre"></textarea>
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Objetivo General del Semillero:</label>
+                                    </td>
+                                    <td>
+                                        <textarea type="text" name="txtnombre"></textarea>
+                                    </td>
+
+
+                                </tr>
+                                <br>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Objetivos Específicos del Semillero:</label>
+                                    </td>
+                                    <td>
+                                        <textarea type="text" name="txtnombre"></textarea>
+                                    </td>
+
+
+                                </tr>
+                                <br>
+
+
+                            </table>
+                            <button (click)="next()"
+                                class="btn btn-success">Siguiente</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button (click)="atras()" class="btn btn-success">Atras</button>
+                        </div>
+
+
+
+
+               
+                    </div>
+
+
+                    <div id="test-l-4" class="content text-center">
+
+                            <div class="form-group" align="center">
+                                   
+                                <table border="0" align="center">
+
+                                        
+                                    <tr>
+                                        <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">PRODUCTOS ESPERADOS</td>
+                                    </tr>
+                                    <br>
+                                    <tr>
+                                        <td>
+                                            <label for="exampleInputEmail1">PROYECTO, ARTICULO, PONENCIA. ETC </label>
+                                        </td>
+                                        <td>
+                                                <!-- <textarea type="text" name="txtapellido" rows="5" cols="20"> </textarea> -->
+                                                <textarea type="text" name="txtnombre"></textarea>
+                                        </td>
+
+
+                                    </tr>
+                                    <br>
+                                    <br>
+                                    <tr>
+                                        <td>
+                                            <label for="exampleInputEmail1">AUTORES</label>
+                                        </td>
+                                        <td>
+                                                <textarea type="text" name="txtnombre"></textarea>
+                                        </td>
+
+
+                                    </tr>
+                                    <br>
+                                    <br>
+                                    <tr>
+                                        <td>
+                                            <label for="exampleInputEmail1">LÍNEA DE INVESTIGACIÓN</label>
+                                        </td>
+                                        <td>
+                                                <textarea type="text" name="txtnombre"></textarea>
+                                        </td>
+
+
+                                    </tr>
+                                    <br>
+                                   
+                                    <tr>
+                                        <td>
+                                            <label for="exampleInputEmail1">ESTADO DEL PRODUCTO</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="txtnombre" />
+                                        </td>
+
+
+                                    </tr>
+                                   
+                                        <br>
+                                </table>
+
+                            </div>
+
+                            <button (click)="next()"
+                            class="btn btn-success">Siguiente</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button (click)="atras()" class="btn btn-success">Atras</button>
+                        </div>
+
+
+
+
+
+
+
+
+                        <div id="test-l-5" class="content text-center">
+
+                                <div class="form-group" align="center">
+                                       
+                                    <table border="0" align="center">
+    
+                                            
+                                        <tr>
+                                            <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">DIRECTIVOS DEL SEMILLERO DE INVESTIGACIÓN</td>
+                                        </tr>
+                                        <br>
+                                        <tr>
+                                            <td>
+                                                <label for="exampleInputEmail1">Tutor del semillero</label>
+                                            </td>
+                                            <td>
+                                                    <!-- <textarea type="text" name="txtapellido" rows="5" cols="20"> </textarea> -->
+                                                    <textarea type="text" name="txtnombre"></textarea>
+                                            </td>
+    
+    
+                                        </tr>
+                                        <br>
+                                        <br>
+                                        <tr>
+                                            <td>
+                                                <label for="exampleInputEmail1">Líder del grupo de investigación</label>
+                                            </td>
+                                            <td>
+                                                    <textarea type="text" name="txtnombre"></textarea>
+                                            </td>
+    
+    
+                                        </tr>
+                                        <br>
+                                        <br>
+                                        <tr>
+                                            <td>
+                                                <label for="exampleInputEmail1">Director departamento del programa al cual se adscribe el semillero de
+                                                        investigación</label>
+                                            </td>
+                                            <td>
+                                                    <textarea type="text" name="txtnombre"></textarea>
+                                            </td>
+    
+    
+                                        </tr>
+                                        <br>
+                                       
+                                        <tr>
+                                            <td>
+                                                <label for="exampleInputEmail1">Estudiante coordinador (a)</label>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="txtnombre" />
+                                            </td>
+    
+    
+                                        </tr>
+                                       
+                                            <br>
+                                    </table>
+    
+                                </div>
+                           
+                                <button type="submit" name="btn registrar" class="btn btn-dark">Registrar
+                                    
+                            </button>&nbsp;&nbsp;&nbsp;&nbsp;
+    
+                            <button type="submit" name="btn registrar" class="btn btn-dark">Descargar Archivo </button>
+                                    <br>  <br>  <br>
+
+                            <button (click)="atras()" class="btn btn-success">Atras</button>
+                            </div>
+    
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+</body>
+
+</html>

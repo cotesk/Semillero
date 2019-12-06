@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+
+function solonumero(e){
+
+key=e.keyCode  ||e.which;
+
+teclado=String.fromCharCode(key);
+
+numero="0123456789";
+especiales="8-37-38-46";
+teclado_especial=false;
+
+for(var i in especiales ){
+
+  if(key==especiales[i]){
+
+    teclado_especial=true;
+
+
+  }
+
+}
+
+if(numero.indexOf(teclado)==-1 && !teclado_especial){
+
+return false;
+
+}
+
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+      <img src="assets/Imagenes/logo.jpeg" [routerLink]='["/menu"]' width="800" height="50" side="500" alt="logo"
+        style="width:40px;">
+    </a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/menu"]'>Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/registrar"]'>Registrar Semillero</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/aval"]'>Solicitar Aval</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/estudiante"]'>Registrar Estudiantes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/docente"]'>Registrar Docente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/convocatoria"]'>Convocatoria</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/home"]'>Salir</a>
+      </li>
+
+      <!-- <li class="nav-item">
+                    <a class="nav-link" [routerLink]='["/prueba"]'>prueba</a>
+                </li> -->
+    </ul>
+  </nav>
+
+
+
+  <br>
+
+  <div align="center">
+
+      <img src="assets/Imagenes/combo.jpeg" width="10%">
+    </div>
+  <br>
+
+  <div class="container">
+
+    <div id="stepper1" class="bs-stepper">
+      <div class="bs-stepper-header">
+        <div class="step" data-target="#test-l-1">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">1</span>
+            <span class="bs-stepper-label">REGISTRAR CONVOCATORIA</span>
+          </button>
+        </div>
+        <div class="line"></div>
+        <div class="step" data-target="#test-l-2">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">2</span>
+            <span class="bs-stepper-label">REGISTRO CONVOCATORIA</span>
+          </button>
+        </div>
+        <div class="line"></div>
+
+      </div>
+  
+      <div class="bs-stepper-content">
+        <form (ngSubmit)="onSubmit(validacion)">
+          <div id="test-l-1" class="content">
+            <div class="form-group" align="center">
+
+              <table border="0" align="center">
+                
+                <tr>
+                  <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">REGISTRAR CONVOCATORIA</td>
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <label for="exampleInputEmail1">Nombre Convocatoria</label>
+                  </td>
+
+                  <td>
+                    <input type="text" name="numero"  [(ngModel)]="convocatoria.nombreconvocatoria" id="ingreso" name="txtfecha" size="20" />
+                  </td>
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <label for="exampleInputEmail1">Fecha Inicio</label>
+                  </td>
+
+                  <td>
+                    <input type="date" [(ngModel)]="convocatoria.fechainicio" id="nombre" name="txtnombre" />
+                  </td>
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <label for="exampleInputEmail1">Fecha Cierre</label>
+                  </td>
+
+                  <td>
+                    <input type="date" [(ngModel)]="convocatoria.fechacierre" id="apellido" name="txtapellido" />
+                  </td>
+                
+                </tr>
+                <br>
+
+              </table>
+              
+              <div align="center">
+
+                <button type="button" (click)='Guardar()' class="btn btn-dark">Registrar</button>
+
+        </div>
+        <br><br>
+              <button (click)="next()"
+                                class="btn btn-success">Siguiente</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           
+            </div>
+          
+          </div>
+          <div id="test-l-2" class="content">
+            <div class="form-group" align="center" >
+              <div class="container">
+
+                <table class="table table-dark">
+            
+                  <thead>
+                    <tr>
+                      <th>Identificacion</th>
+                      <th>NombreConvocatoria</th>
+                      <th>FechaInicio</th>
+                      <th>FechaCierre</th>
+            
+                    </tr>
+                  </thead>
+            
+                  <tbody>
+                    <tr *ngFor="let convocatoria of convocatorias">
+                      <td>{{convocatoria.id}}</td>
+                      <td>{{convocatoria.nombreconvocatoria}}</td>
+                      <td>{{convocatoria.fechainicio}}</td>
+                      <td>{{convocatoria.fechacierre}}</td>
+            
+                      <!-- <button class="delete" title="delete socio"
+                                  (click)="delete(estudiantes)">x</button> -->
+            
+            
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            
+
+              <button (click)="atras()" class="btn btn-success">Atras</button>
+            </div>
+           
+          </div>
+      
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div align="center">
+
+    <img src="assets/Imagenes/combo.jpeg" width="20%">
+  </div>
+  <br>
+  <div id="formulario">
+
+
+    <form>
+
+      <table border="0" align="center">
+
+        <br>
+        <tr>
+          <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">REGISTRAR CONVOCATORIA</td>
+
+        </tr>
+        <br>
+
+        <tr>
+          <td class="descripcion">Nombre Convocatoria</td>
+          <td class="valor">
+          
+          </td>
+
+        </tr>
+        <br>
+        <tr>
+          <td class="descripcion">Fecha de Inicio</td>
+          <td class="valor">
+            <input type="date" [(ngModel)]="convocatoria.fechainicio" id="nombre" name="txtnombre" />
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td class="descripcion">Fecha de Cierre</td>
+          <td class="valor">
+            <input type="date" [(ngModel)]="convocatoria.fechacierre" id="apellido" name="txtapellido" />
+          </td>
+        </tr>
+
+        <br>
+
+        <br>
+
+        <tr>
+          <td colspan="2">
+            <div align="center">
+              <button type="button" (click)='Guardar()' class="btn btn-dark">Registrar</button>&nbsp;&nbsp;
+              <input type="reset" class="btn btn-dark" id="reset" value="Reiniciar">
+
+            </div>
+
+          </td>
+
+        </tr>
+
+
+
+
+
+
+      </table>
+
+    </form>
+
+
+  </div> -->
+
+
+
+  <br><br><br><br>
+
+  
+  
+
+  <br><br><br><br><br><br><br>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+    /* body  {
+          background-image: url("assets/Imagenes/upc.jpeg");
+          background-color: #cccccc;
+         
+        } */
+
+
+
+    /* body {
+      background-image: url("assets/Imagenes/upc.jpeg");
+    
+      opacity: 0.4;
+             
+    } */
+  </style>
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+        <img src="assets/Imagenes/logo.jpeg" [routerLink]='["/menu"]' width="800" height="50" side="500" alt="logo"
+        style="width:40px;">
+    </a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/menu"]'>Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/registrar"]'>Registrar Semillero</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/aval"]'>Solicitar Aval</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/estudiante"]'>Registrar Estudiantes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/docente"]'>Registrar Docente</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/home"]'>Salir</a>
+      </li>
+      <!-- <li class="nav-item">
+            <a class="nav-link" [routerLink]='["/prueba"]'>prueba</a>
+        </li> -->
+    </ul>
+  </nav>
+
+
+  <br><br>
+
+
+  <div align="center" >
+
+    <img src="assets/Imagenes/aval.jpeg" width="10%">
+  </div>
+  <br>
+  <div align="center">
+<!-- 
+      <ul>
+
+          <li *ngFor="let docente of  docentes" >
+          
+        
+          Nombre Tutor :{{docente.nombre}}<br>
+          
+          </li>
+          
+          </ul> -->
+
+  
+
+  
+  <!-- <div class="col-md-3" >
+      <select class="form-control input-sm" id="id" name="id"    style="width:320px" >
+          <option *ngFor="let convocatoria of convocatorias" value="{{convocatoria.id}}" >
+            
+              {{convocatoria.nombreconvocatoria}} : {{convocatoria.fechainicio}} : {{convocatoria.fechacierre}}</option>
+          
+
+      </select>
+      
+  </div> -->
+  
+  <div class="alert alert-danger" role="alert" *ngIf="isError">
+      Something is wrong!
+    </div>
+
+</div>
+  <div>
+  
+    
+  
+  <br><br><br>
+  
+  <br>
+  
+  
+    <div id="pdf" align ="center" >
+        <h1 align="center">CARTA DE SOLICITUD AVAL</h1>
+        <h6> Fecha:<input type="date" #fecha id="fechaNacimiento" name="txtnacimiento" maxlength="10" size="3" /></h6>
+    <strong> 
+  <p>   Señores</p></strong> 
+      <p>División de Gestión de la Investigación </p>
+      <p>Universidad Popular Del Cesar.</p>
+      <p>Valledupar.</p>
+    
+      <p> <strong>Asunto: </strong> Carta en donde el tutor del semillero de investigación acepta </p>
+      <p> los términos de referencia de la convocatoria y asume los </p>
+      <p> compromisos que se deriven de ésta </p>
+  
+      <p> Respetados señores, </p>
+  
+      <p> Declaro que conozco detalladamente las características, requisitos y condiciones </p>
+      <p> de la convocatoria interna de aval a los semilleros de Investigación 2019, de la </p>
+      <p> Universidad Popular del Cesar y me comprometo a asumir los compromisos que se</p>
+      <p> deriven de ésta. De igual forma acepto en su totalidad lo establecido en los pliego</p>
+      <p> determinados por UNICESAR.</p>
+  
+      <p> Declaro que la información suministrada es veraz y corresponde a la realidad. En</p>
+      <p> caso de encontrarse alguna incoherencia o inconsistencia en la información o </p>
+      <p> documentación suministrada, UNICESAR podrá en cualquier momento, solicitar la </p>
+      <p> revisión de la información, rechazar mi propuesta o finiquitar el beneficio, sin</p>
+      <p> perjuicio de las acciones legales correspondientes.</p>
+      <p> De igual manera notifico que el objetivo es solicitar el aval por parte de UNICESAR,</p>
+      <p>para el semillero de investigación: <input   type="text" #nombre size="18" /></p>
+      <p>Cordialmente,</p>
+  
+      <!-- [(ngModel)]="solicitarAval.docente_id" -->
+      <!-- <p> TUTOR DEL SEMILLERO DE INVESTIGACIÓN:<input   type="text" #test  id="fname" name="fname" size="18" /> </p> -->
+
+      <div align ="center">
+        <p> TUTOR DEL SEMILLERO DE INVESTIGACIÓN: </p>
+        <div class="col-md-3" >
+          <select class="form-control input-sm" id="id" name="id"    style="width:320px" >
+              <option #test *ngFor="let docente of docentes" value="{{docente.nombre}}" >
+                
+                                      {{docente.nombre}} </option>
+              
+    
+    
+                                      
+          </select>
+          
+      </div>
+
+      </div>
+    
+    </div>
+    <!-- <button  (click)="download()">download </button> -->
+  
+    <br> <br> <br> <br>
+    <div align="center" >
+    <button class="btn btn-dark" (click)="download()">download<input type=image src="assets/Imagenes/archivo.png"
+      width="55" height="45"> </button><br><br><br>
+ 
+
+    </div>
+    <br> <br>
+
+
+  </div>
+
+  <div align="center" >
+    <button class="btn btn-dark" (click)="guardar()">Guardar<input type=image src="assets/Imagenes/archivo.png"
+      width="55" height="45"> </button><br><br><br>
+ 
+
+    </div>
+
+<br>
+
+<div class="form-group" align="center">
+
+  <table border="0" align="center">
+
+      <div class="container">
+
+          <table class="table table-dark">
+  
+              <thead>
+                  <tr>
+                      <th>Identificacion</th>
+                      <th>Nombre Semillero</th>
+                   
+  
+                      <th>Nombre del Tutor </th>
+                 
+                  
+                  </tr>
+              </thead>
+  
+              <tbody>
+                  <tr *ngFor="let solicitarAval of solicitarAvals">
+                      <td>{{solicitarAval.id}}</td>
+                      <td>{{solicitarAval.nombresemillero}}</td>
+                      <!-- <td>{{solicitarAval.docente}}</td> -->
+  
+                  
+                 
+                      <!-- <button class="delete" title="delete socio"
+                        (click)="delete(estudiantes)">x</button> -->
+  
+                   
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+  </table>
+
+</div>
+
+
+
+  <h6 class="texto">Adjuntar su archivo para solicitud de su aval</h6><br>
+
+  <div align="center">
+    <input type="file" class="btn btn-dark"><br><br>
+    <button type="button" class="btn btn-dark">Enviar Archivo<br><input type=image src="assets/Imagenes/enviar.png"
+        width="55" height="45"></button><br><br><br>
+
+
+  </div>
+
+
+
+  <br><br><br><br><br><br><br><br><br><br>
+
+  <br>
+  <br><br><br><br><br><br><br>
+
+
+
+
+</body>
+
+</html>

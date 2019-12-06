@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function validarSiNumero(numero){
+          if (!/^([0-9])*$/.test(numero))
+            alert("El valor " + numero + " no es un número");
+        }
+      </script>
+
+</head>
+
+<body>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <!-- Brand/logo -->
+                <a class="navbar-brand" href="#">
+                  <img src="assets/Imagenes/logo.jpeg" [routerLink]='["/menu"]' width="800" height="50" side="500" alt="logo" style="width:40px;">
+                </a>
+                
+                <!-- Links -->
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]='["/menu"]'>Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"[routerLink]='["/registrar"]'>Registrar Semillero</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" [routerLink]='["/aval"]'>Solicitar Aval</a>
+                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]='["/estudiante"]'>Registrar Estudiantes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" [routerLink]='["/docente"]'>Registrar Docente</a>
+                    </li>
+              
+                
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]='["/convocatoria"]'>Convocatoria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]='["/home"]'>Salir</a>
+                </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" [routerLink]='["/prueba"]'>prueba</a>
+                </li> -->
+                </ul>
+              </nav>
+    
+
+              <br>
+              <div align="center">
+
+                    <img src="assets/Imagenes/tutor.jpeg" width="30%">
+                </div>
+        
+           
+
+
+    <br>
+
+    <div class="container">
+
+        <div id="stepper1" class="bs-stepper">
+            <div class="bs-stepper-header">
+                <div class="step" data-target="#test-l-1">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">1</span>
+                        <span class="bs-stepper-label">INFORMACIÓN DEL TUTOR</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#test-l-2">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">2</span>
+                        <span class="bs-stepper-label">INFORMACIÓN DEL TUTOR</span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#test-l-3">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">3</span>
+                        <span class="bs-stepper-label">INFORMACIÓN ACADEMICA</span>
+                    </button>
+                </div>
+                <div class="step" data-target="#test-l-4">
+                    <button class="step-trigger">
+                        <span class="bs-stepper-circle">4</span>
+                        <span class="bs-stepper-label">REGISTRO DE TUTORES</span>
+                    </button>
+                </div>
+            </div>
+            <div class="bs-stepper-content">
+                <form (ngSubmit)="onSubmit()">
+                    <div id="test-l-1" class="content">
+                        <div class="form-group" align="center">
+
+                            <table border="0" align="center">
+                                <tr>
+                                    <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">INFORMACIÓN DEL TUTOR</td>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Cedula Tutor</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" onChange="validarSiNumero(this.value);" [(ngModel)]="docente.id" id="apellido"name="txtapellido" />
+                                    </td>
+
+
+                                </tr>
+                                <br>
+
+
+                                
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Nombre del Tutor</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" [(ngModel)]="docente.nombre" id="nombre"
+                                            name="txtnombre" />
+                                    </td>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Apellido del Tutor</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" [(ngModel)]="docente.apellido" id="apellido"
+                                            name="txtapellido" />
+                                    </td>
+                                </tr>
+
+
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Telefono</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" [(ngModel)]="docente.telefono" id="apellido"
+                                            name="txtapellido" />
+                                    </td>
+                                </tr>
+
+
+                               
+
+                                <br>
+
+
+
+                            </table>
+                            <button (click)="next()" class="btn btn-success">Suguiente</button>
+
+                        </div>
+
+
+                    </div>
+                    <div id="test-l-2" class="content">
+                        <div class="form-group" align="center">
+
+                            <table border="0" align="center">
+
+                                <tr>
+                                    <td colspan="2" class="centrado2" style="color:rgb(247, 243, 243)">INFORMACIÓN DEL TUTOR</td>
+                                </tr>
+                                <br>
+
+                                <tr>
+
+                                    <td>
+                                        <label for="exampleInputEmail1">Sexo</label>
+                                    </td>
+                                    <td>
+                                        <input type="radio" [(ngModel)]="docente.sexo" id="sexo" name="opSexo"
+                                            value="m" />Maculino
+                                        <input type="radio" [(ngModel)]="docente.sexo" id="sexo" name="opSexo"
+                                            value="f" />Femenino
+                                    </td>
+
+                                </tr>
+                                <br>
+                                <tr>
+
+                                    <td>
+                                        <label for="exampleInputEmail1">Fecha de Nacimiento</label>
+                                    </td>
+                                    <td>
+                                        <input type="date" [(ngModel)]="docente.fechaNacimiento" id="fechaNacimiento" name="txtnacimiento" maxlength="10" size="3" />
+                                    </td>
+
+                                </tr>
+                               
+                                <br>
+
+
+
+                                <br>
+
+                            </table>
+                            <button (click)="next()"
+                                class="btn btn-success">Siguiente</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button (click)="atras()" class="btn btn-success">Atras</button>
+                        </div>
+
+                    </div>
+                    <div id="test-l-3" class="content text-center">
+                        <div class="form-group" align="center">
+                            <table border="0" align="center">
+
+
+                                <tr>
+                                    <td colspan="2" class="centrado2"style="color:rgb(247, 243, 243)">INFORMACIÓN ACADEMICA</td>
+                                </tr>
+                                <br>
+                                
+                                <tr>
+
+                                    <td>
+                                        <label for="exampleInputEmail1"> Email Institucional </label>
+                                    </td>
+                                    <td>
+                                        <input type="text"  [(ngModel)]="docente.emailInstitucional"id="direccion"name="txtapellido" />
+                                    </td>
+
+                                </tr>
+
+                                <br>
+                                <tr>
+
+                                    <td>
+                                        <label for="exampleInputEmail1">Email Personal</label>
+                                    </td>
+                                    <td>
+                                        <input type="text"  [(ngModel)]="docente.emailPersonal"  value="0" name="txtapellido" />
+                                    </td>
+
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Programa académico actual</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" [(ngModel)]="docente.programa" id="programa"
+                                            name="txtapellido" />
+                                    </td>
+                                </tr>
+                                
+                               
+                                <br>
+                             
+                                <tr>
+                                    <td>
+                                        <label for="exampleInputEmail1">Link del CvLAC</label>
+                                    </td>
+
+                                    <td>
+                                            <input type="text" [(ngModel)]="docente.CvLAC" name="txtapellido" />
+                                    </td>
+                                </tr>
+                                <br>
+                                <tr>
+                                        <td colspan="2" align="center">
+
+                                            <div align="center">
+
+                                                    <button type="button" (click)='Guardar()' class="btn btn-dark">Registrar</button>
+
+                                            </div>
+                                           
+                                           
+                                          
+                                        </td>
+                    
+                                    </tr>
+                            </table>
+                            <br><br><br>
+                            <button (click)="atras()" class="btn btn-success">Atras</button>
+                        </div>
+                    </div>
+                    <div id="test-l-4" class="content text-center">
+                        <div class="form-group" align="center">
+                            <table border="0" align="center">
+                              
+                        <br>
+                                  <div class="container">
+                                              
+                                    <table class="table table-dark">
+                                      
+                                      <thead>
+                                        <tr>
+                                          <th>Identificacion</th>
+                                          <th>Nombre</th>
+                                          <th>Apellido</th>
+                                         
+                                          <th>Telefono</th>
+                                          <th>Sexo</th>
+                                          <th>FechaNacimiento</th>
+                                         
+                                     
+                                        </tr>
+                                      </thead>
+                                      
+                                      <tbody>     
+                                          <tr *ngFor="let docente of docentes" >            
+                                              <td>{{docente.id}}</td>
+                                              <td>{{docente.nombre}}</td>
+                                              <td>{{docente.apellido}}</td>
+                                           
+                                              <td>{{(docente.telefono)}}</td>
+                                              <td>{{docente.sexo}}</td>
+                                              <td>{{docente.fechaNacimiento}}</td>
+                                              <td><a routerLink="/docenteedit/{{docente.id}}"><br><input type=image
+                                                src="assets/Imagenes/ver.png" width="55" height="45"></a></td>
+                                            
+                                          
+                                              <!-- <button class="delete" title="delete socio"
+                                              (click)="delete(estudiantes)">x</button> -->
+                        
+                                              <!-- <td><a routerLink="/editarestudiante/{{estudiantes.id}}">ver</a></td> -->
+                                           </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                  
+
+                            </table>
+                            <br><br><br>
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button type="button" (click)='Guardar()' class="btn btn-dark">Registrar<br><input type=image
+        src="assets/Imagenes/guardar.png" width="55" height="45"></button>&nbsp;&nbsp; -->
+  
+    <br>
+   
+
+    <!-- <h2>
+            <div class="container">                                  
+              <div class="spinner-border"></div>
+              Lista De Docente
+            </div>
+           </h2>
+           <div class="col-md-3">
+            <select class="form-control input-sm" id="id" name="id">
+                <option *ngFor="let docente of docentes" value="{{docente.id}}">
+                    {{docente.nombre}}</option>
+            </select>
+        </div> -->
+         
+
+
+    
+    
+    <br><br><br><br><br><br><br>
+
+  
+
+
+
+</body>
+
+</html>

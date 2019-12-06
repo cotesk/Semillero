@@ -1,0 +1,188 @@
+<!-- <div class="container">
+
+  <div id="stepper1" class="bs-stepper">
+    <div class="bs-stepper-header">
+      <div class="step" data-target="#test-l-1">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">Email</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-2">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Password</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-3">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">Validate</span>
+        </button>
+      </div>
+    </div>
+    <div class="bs-stepper-content">
+      <form (ngSubmit)="onSubmit()">
+        <div id="test-l-1" class="content">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+          </div>
+          <button (click)="next()" class="btn btn-primary">Next</button>
+        </div>
+        <div id="test-l-2" class="content">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <button (click)="next()" class="btn btn-primary">Next</button>
+        </div>
+        <div id="test-l-3" class="content text-center">
+          <button type="submit" class="btn btn-primary mt-5">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- 
+<html>
+
+<head>
+
+  <script>
+  
+
+// $(document).ready(function(){
+// $("button").click(function(){
+
+// var comment =$.trim($("#comment").val());
+// if(comment !=""){
+//   var doc = new jsPDF();
+// doc.text(comment,180,10);
+
+
+// doc.save('Test.pdf');
+
+// }
+
+
+// });
+
+
+
+
+// });
+
+    
+    
+    </script>
+    
+</head>
+
+
+<body>
+  
+  <div id="pdf" align ="center">
+      <h6> Fecha:<input type="date" #fecha id="fechaNacimiento" name="txtnacimiento" maxlength="10" size="3" /></h6>
+  <strong> 
+<p>   Señores</p></strong> 
+    <p>División de Gestión de la Investigación </p>
+    <p>Universidad Popular Del Cesar.</p>
+    <p>Valledupar.</p>
+  
+    <p> <strong>Asunto: </strong> Carta en donde el tutor del semillero de investigación acepta </p>
+    <p> los términos de referencia de la convocatoria y asume los </p>
+    <p> compromisos que se deriven de ésta </p>
+
+    <p> Respetados señores, </p>
+
+    <p> Declaro que conozco detalladamente las características, requisitos y condiciones </p>
+    <p> de la convocatoria interna de aval a los semilleros de Investigación 2019, de la </p>
+    <p> Universidad Popular del Cesar y me comprometo a asumir los compromisos que se</p>
+    <p> deriven de ésta. De igual forma acepto en su totalidad lo establecido en los pliego</p>
+    <p> determinados por UNICESAR.</p>
+
+    <p> Declaro que la información suministrada es veraz y corresponde a la realidad. En</p>
+    <p> caso de encontrarse alguna incoherencia o inconsistencia en la información o </p>
+    <p> documentación suministrada, UNICESAR podrá en cualquier momento, solicitar la </p>
+    <p> revisión de la información, rechazar mi propuesta o finiquitar el beneficio, sin</p>
+    <p> perjuicio de las acciones legales correspondientes.</p>
+    <p> De igual manera notifico que el objetivo es solicitar el aval por parte de UNICESAR,</p>
+    <p>para el semillero de investigación: <input  type="text" #nombre size="18" /></p>
+    <p>Cordialmente,</p>
+
+
+
+    <p> TUTOR DEL SEMILLERO DE INVESTIGACIÓN:<input  type="text" #test  id="fname" name="fname" size="18" /> </p>
+  </div>
+  <button  (click)="download()">download </button>
+
+
+</body>
+</html> -->
+<div class="col-md-3" >
+  <select class="form-control input-sm" id="id" name="id"    style="width:320px" >
+      <option *ngFor="let convocatoria of convocatorias" value="{{convocatoria.id}}" >
+        
+          {{convocatoria.nombreconvocatoria}} : {{convocatoria.fechainicio}} : {{convocatoria.fechacierre}}</option>
+      
+
+  </select>
+  
+</div>
+<br><br><br>
+
+<section id="register" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form #formRegister="ngForm" (ngSubmit)="onRegister(formRegister)">
+                <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                <div class="alert alert-danger" role="alert" *ngIf="isError">
+                  {{msgError}}
+                </div>
+                <div class="form-group">
+                  <input type="text" #name="ngModel" name="name" class="form-control" placeholder="Name" [(ngModel)]="user.name" required minlength="4"
+                    maxlength="15">
+                </div>
+
+                <div class="alert alert-danger" role="alert" *ngIf="name.touched && !name.valid">
+                  <div *ngIf="name.errors.required">Name is required</div>
+                  <div *ngIf="name.errors.minlength">Name must be at least 4 characters</div>
+                </div>
+                <div class="form-group">
+                  <input type="email" #email="ngModel" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" required
+                    minlength="8">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                  <div *ngIf="email.errors.minlength">Email must be at least 8 characters</div>
+                </div>
+                <div class="form-group">
+                  <input type="password" #password="ngModel" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password"
+                    required minlength="5" maxlength="10">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                  <div *ngIf="password.errors.required">Password is required</div>
+                  <div *ngIf="password.errors.minlength">Password must be at least 5 characters</div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
+                <div class="form-group">
+                  <a routerLink="/login" class="form-control login-user">Do you have account?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
